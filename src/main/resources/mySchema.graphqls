@@ -1,0 +1,25 @@
+schema{
+	query:Query
+	mutation:Mutation
+}
+
+type Query{
+	models : [GraphQLServletModel]
+	modelById(id:Int) : GraphQLServletModel
+	modelByName(id:Int) : [GraphQLServletModel]
+	modelByCost(cost:Int) : [GraphQLServletModel]
+	modelByFlag(flag:Boolean) : [GraphQLServletModel]
+}
+
+type Mutation{
+	createModel(id:Int,name:String,cost:Int,flag:Boolean):GraphQLServletModel
+	deleteModel(id:Int):GraphQLServletModel
+	updateModel(id:Int,name:String,cost:Int,flag:Boolean):GraphQLServletModel
+}
+
+type GraphQLServletModel{
+	id:Int
+	name:String
+	cost:Int
+	flag:Boolean
+}
